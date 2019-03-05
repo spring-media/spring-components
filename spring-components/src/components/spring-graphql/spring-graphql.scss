@@ -1,0 +1,32 @@
+div {
+  font-family: $font;
+}
+
+h3 {
+  color: $orange;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    font-size: 18px;
+
+    span {
+      color: $dark;
+      margin-right: 0.3rem;
+    }
+    a {
+      color: $blue;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}
+
+.error {
+  color: $orange;
+}

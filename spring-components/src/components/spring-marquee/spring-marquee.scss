@@ -1,0 +1,74 @@
+// # Marquee
+@mixin stencil-marquee--when-hovered() {
+  .stencil-marquee:hover & {
+    @content;
+  }
+}
+
+.container {
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.stencil-marquee {
+  font-family: $font;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  transform: translateZ(0);
+  white-space: nowrap;
+  background: $orange;
+}
+
+// ## Content
+.stencil-marquee__content {
+  display: inline-block;
+  .item {
+    margin-right: 10px;
+    padding: 5px;
+    color: white
+  }
+}
+
+// ## Content
+// ### State: is animated
+// Variables are set on runtime in Marquee.tsx.
+.stencil-marquee__content--is-animated {
+  animation-name: stencil-marquee--animation;
+  animation-timing-function: var(--stencil-marquee--animation-function);
+  animation-duration: var(--stencil-marquee--animation-time);
+  animation-delay: var(--stencil-marquee--animation-delay);
+  animation-iteration-count: infinite;
+}
+
+// ## Content
+// ### State: pause when hovered
+.stencil-marquee__content--pause-when-hovered {
+  @include stencil-marquee--when-hovered() {
+    animation-play-state: paused;
+  }
+}
+
+// ## Content Item
+// @tag <div/>
+// [1] Give the browser a hint that we will change the transform value,
+//     so the browser can setup appropriate optimizations ahead of time before the element is actually changed.
+.stencil-marquee__content-item {
+  display: inline-block;
+  will-change: transform; // [1]
+}
+
+// [1] Variable is set on runtime in Marquee.tsx.
+@keyframes stencil-marquee--animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(var(--stencil-marquee--content-width)); // [1]
+  }
+}

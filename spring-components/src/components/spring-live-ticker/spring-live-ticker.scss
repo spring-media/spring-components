@@ -1,0 +1,48 @@
+div {
+  font-family: $font;
+}
+
+.live {
+  border: 2px solid $orange;
+  text-transform: uppercase; 
+  font-weight: bold;
+  color: $blue;
+  padding-bottom: 4px;
+  letter-spacing: .4px;
+  padding-left: 20px;
+  padding-right: 10px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: $orange;
+    border-radius: 50%;
+    top: 5px;
+    right: 0; 
+    bottom: 0;
+    left: 5px;
+
+    animation: fade 1.5s ease infinite;
+  }
+}
+
+@keyframes fade {
+  0% {
+    background-color: rgba($orange, 0.5);
+  }
+
+  100% {
+    background-color: rgba($orange, 0.8);
+  }
+}
+
+.subtitle {
+  margin-left: 1rem;
+  color: $blue;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  padding-top: 4px;
+}
