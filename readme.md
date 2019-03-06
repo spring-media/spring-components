@@ -6,11 +6,6 @@ The spring-components module is a proof of concept to see whether or not it is p
 
 - Clone the repository `git clone https://github.com/spring-media/spring-components`
 
-Note that the `spring-graphql` component requires a GitHub token:
-```html
-	<spring-graphql token="YOUR TOKEN GOES HERE"/>
-```
-
 ### spring-components
 
  1. `cd` into `/spring-components`
@@ -52,7 +47,7 @@ Requires plain text and has an optional `subtitle` prop
 #### spring-graphql
 Takes an [ISO 3166 Alpha-2 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) as a prop
 ```html
-<spring-graphql  country-code="DE" />
+<spring-graphql country-code="DE" />
 ```
 
 ## Live App Demos
