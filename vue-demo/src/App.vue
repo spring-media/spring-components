@@ -1,20 +1,25 @@
 <template>
   <div id="app">
+    <h1>Vue Spring Components Demo</h1>
+    
     <div class="wrapper">
       <spring-marquee>
-        <span class="item">Stencil Marquee in a Vue project</span>
-        <span class="item">Dah dah dah daaaaaah</span>
-        <span class="item">Wooop wooop 💀</span>
+        <span class="item">Web Components</span>
+        <span class="item">React</span>
+        <span class="item">Vue</span>
       </spring-marquee>
     </div>
+
     <div class="wrapper">
-      <spring-live-ticker subtitle="Yes indeed">
-        Foo Bar Headline and all that!
+      <spring-live-ticker subtitle="Hooray for StencilJS">
+        Web Components are useful
       </spring-live-ticker>
     </div>
+
     <div class="wrapper">
-      <spring-graphql token="" organisation="vuejs"/>
+      <spring-graphql country-code="DE" />
     </div>
+
   </div>
 </template>
 

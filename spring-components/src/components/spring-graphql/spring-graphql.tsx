@@ -1,78 +1,74 @@
 import { Component, State, Prop, Method } from '@stencil/core';
-import { GithubData } from '../../utils/types';
-
+import { Country } from '../../utils/types';
 @Component({
   tag: 'spring-graphql',
   styleUrl: 'spring-graphql.scss'
 })
 export class StencilGraphql {
-  @Prop() token: string;
-  @Prop() organisation: string = 'github';
-
-  @State() githubData: Array<GithubData>;
+  @Prop() countryCode: string = 'DE';
+  @State() country: Country;
 
   componentWillLoad() {
-    if (this.token) {
-      this.fetchData();
+    const { countryCode } = this;
+  
+    if(countryCode) {
+      this.fetchData(countryCode);
     }
   }
 
   @Method()
-  async fetchData() {
+  async fetchData(countryCode: string) { 
     try {
       const query: string = `
-        query {
-          organization(login: "${this.organisation}") {
-            repositories(first: 5, orderBy: {field: UPDATED_AT, direction: DESC}) {
-              nodes {
-                name
-                url
-                updatedAt
-              }
+        {
+          country(code: "${countryCode}") {
+            name
+            emoji
+            continent {
+              name
+            }
+            languages {
+              name
+              native
             }
           }
         }
       `;
 
-      const response = await fetch("https://api.github.com/graphql", {
+      const response = await fetch("https://countries.trevorblades.com", {
         method: "Post",
-        headers: { Authorization: `Bearer ${this.token}` },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query })
       });
 
-      const {
-        data: {
-          organization: {
-            repositories: { nodes }
-          }
-        }
-      } = await response.json();
+      const { data: { country } } = await response.json();
 
-      return (this.githubData = [...nodes]);
+      return this.country = country;
     } catch (error) {
       console.log(`Something went wrong: ${error}`);
     }
   }
 
-  @Method()
-  displayGitData() {
-    if (this.githubData) {
-      return this.githubData.map(repo => (
-        <li>
-          <span>Repo:</span>
-          <a href={repo.url} target="_blank">{repo.name}</a>
-          <p>{repo.updatedAt.toString()}</p>
-        </li>
-      ));
-    }
-  }
-
   render() {
+    const { country } = this;
     return (
       <div>
-        <h3>Spring GraphQL</h3>
-        {this.token && <ul>{this.displayGitData()}</ul>}
-        {!this.token && <p class="error">Please add a valid GitHub token</p>}
+        {
+          this.country &&
+          <div>
+            <h3>{country.name} {country.emoji}</h3>
+            <h4>{country.continent.name}</h4>
+            <ul>
+              {
+                Object.keys(country.languages).map(l =>
+                  <li>
+                    {country.languages[l].name} - {country.languages[l].native}
+                  </li>
+                )
+              }
+            </ul>
+          </div>
+        }
       </div>
     );
   }

@@ -7,31 +7,26 @@
 
 ## Properties
 
-| Property       | Attribute      | Description | Type     | Default     |
-| -------------- | -------------- | ----------- | -------- | ----------- |
-| `organisation` | `organisation` |             | `string` | `'github'`  |
-| `token`        | `token`        |             | `string` | `undefined` |
+| Property      | Attribute      | Description | Type     | Default |
+| ------------- | -------------- | ----------- | -------- | ------- |
+| `countryCode` | `country-code` |             | `string` | `'DE'`  |
 
 
 ## Methods
 
-### `displayGitData() => any[]`
+### `fetchData(countryCode: string) => Promise<any>`
 
 
 
-#### Returns
+#### Parameters
 
-Type: `any[]`
-
-
-
-### `fetchData() => Promise<any[]>`
-
-
+| Name          | Type     | Description |
+| ------------- | -------- | ----------- |
+| `countryCode` | `string` |             |
 
 #### Returns
 
-Type: `Promise<any[]>`
+Type: `Promise<any>`
 
 
 

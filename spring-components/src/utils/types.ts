@@ -1,9 +1,3 @@
-interface GithubData  {
-  name: string;
-  url: string;
-  updatedAt: string;
-}
-
 type AnimationFunctions =
   | 'linear'
   | 'ease'
@@ -17,4 +11,17 @@ type BreakpointSpeedConfig = {
   speedMultiplier: number;
 };
 
-export { GithubData, AnimationFunctions, BreakpointSpeedConfig };
+interface Country {
+  name: string;
+  emoji: string;
+  continent: {
+    name: string;
+  };
+  languages: {
+    name: string;
+    native: string;
+  };
+}
+
+
+export { AnimationFunctions, BreakpointSpeedConfig, Country };

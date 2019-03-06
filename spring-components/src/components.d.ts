@@ -17,14 +17,11 @@ import {
 export namespace Components {
 
   interface SpringGraphql {
-    'displayGitData': () => any[];
-    'fetchData': () => Promise<any[]>;
-    'organisation': string;
-    'token': string;
+    'countryCode': string;
+    'fetchData': (countryCode: string) => Promise<any>;
   }
   interface SpringGraphqlAttributes extends StencilHTMLAttributes {
-    'organisation'?: string;
-    'token'?: string;
+    'countryCode'?: string;
   }
 
   interface SpringLiveTicker {

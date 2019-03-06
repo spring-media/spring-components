@@ -9046,10 +9046,10 @@ split-string@^3.0.1, split-string@^3.0.2:
   dependencies:
     extend-shallow "^3.0.0"
 
-spring-components@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/spring-components/-/spring-components-1.0.0.tgz#cf37a282f5675cb7c5d846afc787dfb3455a1ab5"
-  integrity sha512-FFJ+oFfxy70kyGgDlRknpdfSe+mk2ryNmEWAf0+y4JDH4XzOfJuCCBB5C3OgD5x66BiIzPdSTL9PqUFAJsPA2Q==
+spring-components@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/spring-components/-/spring-components-1.0.1.tgz#2055e6d754f5ce1514cc249b974bdccb33e10b9a"
+  integrity sha512-NIG7a5Fn6NZdRtuJ7oweaUNMv8n3n3bFOkeCrpkTbEqWCWLeBNsPPR6bvtAaaIW9fCCbLOjHAiTssH0wLOSDxg==
 
 sprintf-js@~1.0.2:
   version "1.0.3"
