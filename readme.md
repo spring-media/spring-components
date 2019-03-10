@@ -50,6 +50,12 @@ Takes an [ISO 3166 Alpha-2 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_
 <spring-graphql country-code="DE" />
 ```
 
+#### spring-video
+Requires a source prop
+```html
+<spring-video source="SOURCE_TO_YOUR_VIDEO_FILE" />
+```
+
 ## Live App Demos
 
  - [react demo](https://react-spring-components-demo-e3ysqbusv.now.sh)
