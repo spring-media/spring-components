@@ -8,6 +8,10 @@ class App extends Component {
         <h1>React Spring Components Demo</h1>
     
         <div className="wrapper">
+          <spring-video source="https://www.sample-videos.com/video123/mp4/240/big_buck_bunny_240p_1mb.mp4"></spring-video>
+        </div>
+
+        <div className="wrapper">
           <spring-marquee>
             <span className="item">Web Components</span>
             <span className="item">React</span>

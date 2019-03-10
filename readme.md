@@ -52,6 +52,6 @@ Takes an [ISO 3166 Alpha-2 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_
 
 ## Live App Demos
 
- - [react demo](https://react-spring-components-demo-k5izl8606.now.sh/)
+ - [react demo](https://react-spring-components-demo-e3ysqbusv.now.sh)
  - [vue demo](https://vue-spring-components-demo-h8wytf866.now.sh/)
 

@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <h1>Vue Spring Components Demo</h1>
+
+    <div class="wrapper">
+      <spring-video source="https://www.sample-videos.com/video123/mp4/240/big_buck_bunny_240p_1mb.mp4"></spring-video>
+    </div>
     
     <div class="wrapper">
       <spring-marquee>

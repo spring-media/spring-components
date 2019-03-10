@@ -45,6 +45,20 @@ export namespace Components {
     'pauseWhenHovered'?: boolean;
     'startAnimationAfterInSeconds'?: number;
   }
+
+  interface SpringVideo {
+    'handlePlayback': () => void;
+    'handleRangeUpdate': (e: any) => void;
+    'handleSkip': (e: MouseEvent) => void;
+    'scrub': (e: any) => any;
+    'setupRunTimeVars': () => void;
+    'source': string;
+  }
+  interface SpringVideoAttributes extends StencilHTMLAttributes {
+    'onLoadEvent'?: (event: CustomEvent) => void;
+    'onPlayEvent'?: (event: CustomEvent) => void;
+    'source'?: string;
+  }
 }
 
 declare global {
@@ -52,12 +66,14 @@ declare global {
     'SpringGraphql': Components.SpringGraphql;
     'SpringLiveTicker': Components.SpringLiveTicker;
     'SpringMarquee': Components.SpringMarquee;
+    'SpringVideo': Components.SpringVideo;
   }
 
   interface StencilIntrinsicElements {
     'spring-graphql': Components.SpringGraphqlAttributes;
     'spring-live-ticker': Components.SpringLiveTickerAttributes;
     'spring-marquee': Components.SpringMarqueeAttributes;
+    'spring-video': Components.SpringVideoAttributes;
   }
 
 
@@ -79,16 +95,24 @@ declare global {
     new (): HTMLSpringMarqueeElement;
   };
 
+  interface HTMLSpringVideoElement extends Components.SpringVideo, HTMLStencilElement {}
+  var HTMLSpringVideoElement: {
+    prototype: HTMLSpringVideoElement;
+    new (): HTMLSpringVideoElement;
+  };
+
   interface HTMLElementTagNameMap {
     'spring-graphql': HTMLSpringGraphqlElement
     'spring-live-ticker': HTMLSpringLiveTickerElement
     'spring-marquee': HTMLSpringMarqueeElement
+    'spring-video': HTMLSpringVideoElement
   }
 
   interface ElementTagNameMap {
     'spring-graphql': HTMLSpringGraphqlElement;
     'spring-live-ticker': HTMLSpringLiveTickerElement;
     'spring-marquee': HTMLSpringMarqueeElement;
+    'spring-video': HTMLSpringVideoElement;
   }
 
 

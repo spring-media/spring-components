@@ -1,6 +1,6 @@
 {
   "name": "spring-components",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",

@@ -10,7 +10,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
-    "spring-components": "1.0.1",
+    "spring-components": "1.0.4",
     "typescript": "3.3.3333"
   },
   "scripts": {
